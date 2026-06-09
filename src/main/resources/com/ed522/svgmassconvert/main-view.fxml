@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity"
+          minHeight="-Infinity" minWidth="-Infinity"
+          prefHeight="324.0" prefWidth="480.0"
+          xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="com.ed522.svgmassconvert.MainController">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES"/>
+        <ColumnConstraints hgrow="ALWAYS"/>
+        <ColumnConstraints hgrow="SOMETIMES"/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints vgrow="SOMETIMES"/>
+        <RowConstraints vgrow="SOMETIMES"/>
+        <RowConstraints vgrow="SOMETIMES"/>
+        <RowConstraints valignment="CENTER" vgrow="SOMETIMES"/>
+        <RowConstraints vgrow="SOMETIMES"/>
+        <RowConstraints maxHeight="466.0" minHeight="10.0" prefHeight="416.0" vgrow="SOMETIMES"/>
+    </rowConstraints>
+    <padding>
+        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0"/>
+    </padding>
+    <Label style="-fx-font-size: 48; -fx-font-weight: bold;" text="Convert SVG" GridPane.columnSpan="2147483647"
+           GridPane.halignment="CENTER">
+        <GridPane.margin>
+          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0"/>
+        </GridPane.margin>
+    </Label>
+    <Label text="Source folder:" GridPane.rowIndex="1">
+        <GridPane.margin>
+          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0"/>
+        </GridPane.margin>
+    </Label>
+    <Label text="Destination folder:" GridPane.rowIndex="2">
+        <GridPane.margin>
+          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0"/>
+        </GridPane.margin>
+    </Label>
+    <Label text="Dimensions:" GridPane.rowIndex="3">
+        <GridPane.margin>
+          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0"/>
+        </GridPane.margin>
+    </Label>
+    <TextField fx:id="sourceField" GridPane.columnIndex="1" GridPane.rowIndex="1" promptText="Source">
+        <GridPane.margin>
+          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0"/>
+        </GridPane.margin>
+    </TextField>
+    <TextField fx:id="destinationField" GridPane.columnIndex="1" GridPane.rowIndex="2" promptText="Destination">
+        <GridPane.margin>
+          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0"/>
+        </GridPane.margin>
+    </TextField>
+    <Button mnemonicParsing="false" onAction="#browseSource" text="Browse" GridPane.columnIndex="2"
+            GridPane.rowIndex="1">
+        <GridPane.margin>
+          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0"/>
+        </GridPane.margin>
+    </Button>
+    <Button mnemonicParsing="false" onAction="#browseDestination" text="Browse" GridPane.columnIndex="2"
+            GridPane.rowIndex="2">
+        <GridPane.margin>
+          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0"/>
+        </GridPane.margin>
+    </Button>
+    <HBox prefHeight="0.0" prefWidth="78.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="LEFT"
+          GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+        <Spinner fx:id="dimensionX" editable="true">
+            <valueFactory>
+                <SpinnerValueFactory.IntegerSpinnerValueFactory min="1" max="99999" initialValue="64" />
+            </valueFactory>
+            <HBox.margin>
+                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0"/>
+            </HBox.margin>
+        </Spinner>
+        <Label text="X">
+            <HBox.margin>
+                <Insets top="16.0"/>
+            </HBox.margin>
+        </Label>
+        <Spinner fx:id="dimensionY" editable="true">
+            <valueFactory>
+                <SpinnerValueFactory.IntegerSpinnerValueFactory min="1" max="99999" initialValue="64" />
+            </valueFactory>
+            <HBox.margin>
+                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0"/>
+            </HBox.margin>
+        </Spinner>
+    </HBox>
+    <Button mnemonicParsing="false" onAction="#convertAll" text="Convert all" GridPane.rowIndex="4">
+        <GridPane.margin>
+          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0"/>
+        </GridPane.margin>
+    </Button>
+</GridPane>
